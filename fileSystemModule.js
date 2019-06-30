@@ -1,11 +1,11 @@
 const fileSystemModule =  require('fs');
 
-//create file
+//create file and read it
 fileSystemModule.writeFile('example.txt',"This is an example file",(err)=>{
     if(err)
         console.log(err);
     else{
-        console.log('file created successully');
+        console.log('File created successully');
         fileSystemModule.readFile('example.txt','utf8',(err,fileContents)=>{
             if(err)
                 console.log(err);
@@ -14,4 +14,13 @@ fileSystemModule.writeFile('example.txt',"This is an example file",(err)=>{
         });
     }
         
+});
+
+
+//Rename File
+fileSystemModule.rename('example.txt','example2.txt',(err)=>{
+    if(err)
+        console.log(err);
+    else
+        console.log('Rename Successful')
 });
