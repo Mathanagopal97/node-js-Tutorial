@@ -1,7 +1,13 @@
 const httpModule = require('http');
 const httpServer = httpModule.createServer((request,response)=>{
-    response.write('Hello Mathanagopal');
-    response.end();
+    if(request.url === '/'){
+        response.write('Hello Mathanagopal');
+        response.end();
+    }
+    else{
+        response.write('Using some other domain');
+        response.end();
+    }
 });
 
 httpServer.listen(3000);
